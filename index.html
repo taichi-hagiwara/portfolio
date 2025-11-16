@@ -9,40 +9,36 @@
 <body>
   <main class="container">
     <header class="hero fade-in">
-      <h1>Taichi Hagiwara</h1>
-      <p class="lead">ソフトウェア開発 / 学習中の技術を日々追求しています</p>
+      <h1 class="hero-title">プロフィール</h1>
     </header>
 
     <section id="about" class="card fade-in">
-      <h2>経歴・所属</h2>
-      <p>
-        ここにあなたの経歴と所属（例：大学名、学部、現在の職場や研究室、研究テーマなど）を入力してください。
-      </p>
+      <h2>自己紹介</h2>
       <ul>
-        <li>学歴：○○大学 ○○学部（例）</li>
-        <li>所属：○○（例）</li>
-        <li>興味分野：機械学習、組み込み開発、Web開発 など</li>
+        <li>所属：大阪公立大学工業高等専門学校2年</li>
+        <li>知能情報コース</li>
       </ul>
     </section>
 
-    <section id="other" class="card fade-in">
-      <h2>その他</h2>
-      <p>
-        （ここはご自身で自由に書いてください。趣味、研究テーマ、連絡先、リンクなど）
-      </p>
-      <p class="muted">例：趣味は写真撮影・ハイキング、オープンソースに貢献中、など</p>
+    <!-- 薄い青のバナー（大きく「スキル」と表示） -->
+    <section class="skills-banner fade-in" aria-hidden="false">
+      <h2 class="skills-banner-title">スキル</h2>
     </section>
 
-    <section id="skills" class="card fade-in">
-      <h2>プログラムスキル</h2>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">C++</span>
-        <span class="tag">Java</span>
-        <span class="tag">CSS</span>
-        <span class="tag">HTML</span>
+    <!-- スキル本体（薄い緑がかった指定色 C0E5D6） -->
+    <section id="skills" class="card skills-card fade-in">
+      <h2 class="visually-hidden">プログラムスキル</h2>
+      <div class="skills-inner">
+        <h3 class="skills-subtitle">プログラムスキル</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">CSS</span>
+          <span class="tag">HTML</span>
+        </div>
+        <p class="note">各言語の経験年数やプロジェクト例を追記すると見栄えが良くなります。</p>
       </div>
-      <p class="note">各言語の経験年数やプロジェクト例を追記すると見栄えが良くなります。</p>
     </section>
 
     <section id="tools" class="card fade-in">

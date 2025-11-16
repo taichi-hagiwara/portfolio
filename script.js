@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // 一度フェードインしたら監視を止める（必要ならコメントアウト）
+          // 一度フェードインしたら監視を止める
           observer.unobserve(entry.target);
         }
       });

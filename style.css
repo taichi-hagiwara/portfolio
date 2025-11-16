@@ -2,9 +2,11 @@
   --bg: #ffffff;
   --text: #111827;
   --muted: #6b7280;
-  --accent: #2563eb;
-  --card-shadow: 0 6px 20px rgba(16,24,40,0.04);
-  --radius: 10px;
+  --accent: #0fadf1; /* header h1 color */
+  --banner-light: #e6fbff; /* 薄い青バナー */
+  --skills-bg: #C0E5D6; /* 指定のスキル背景色 */
+  --card-shadow: 0 8px 28px rgba(16,24,40,0.06);
+  --radius: 12px;
   --max-width: 900px;
 }
 
@@ -22,42 +24,74 @@ body{
 
 .container{
   max-width:var(--max-width);
-  margin:40px auto;
+  margin:48px auto;
   padding:24px;
 }
 
 /* hero */
 .hero{
   text-align:left;
-  padding:48px 24px;
+  padding:56px 28px;
   border-radius:var(--radius);
   box-shadow:var(--card-shadow);
-  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,250,0.8));
-  margin-bottom:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,1), rgba(250,250,250,0.95));
+  margin-bottom:48px; /* 広めの余白 */
 }
-.hero h1{margin:0;font-size:2rem;letter-spacing:-0.02em}
+.hero-title{
+  margin:0;
+  font-size:2.0rem;
+  letter-spacing:-0.02em;
+  color:var(--accent); /* 指定の青色 */
+}
 .hero .lead{margin-top:8px;color:var(--muted)}
 
 /* cards */
 .card{
-  padding:20px;
-  border-radius:10px;
+  padding:28px;
+  border-radius:12px;
   box-shadow:var(--card-shadow);
   background:transparent;
-  margin-bottom:20px;
+  margin-bottom:48px; /* 各トピック間隔を広く */
 }
+
+/* skills banner (薄い青で大きく「スキル」) */
+.skills-banner{
+  padding:40px 20px;
+  border-radius:12px;
+  background:var(--banner-light);
+  margin-bottom:28px;
+  text-align:center;
+  box-shadow: 0 6px 18px rgba(13,15,20,0.03);
+}
+.skills-banner-title{
+  margin:0;
+  font-size:2.2rem;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+
+/* skills card (指定色の背景) */
+.skills-card{
+  padding:24px;
+  background:var(--skills-bg);
+  color:var(--text);
+  margin-bottom:48px;
+}
+.skills-inner{max-width:780px;margin:0 auto}
+.skills-subtitle{margin:0 0 12px 0;font-size:1.25rem;font-weight:700}
 
 /* tags */
 .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .tag{
   display:inline-block;
   padding:8px 12px;
-  background:#f3f4f6;
+  background:rgba(255,255,255,0.9);
   color:var(--text);
   border-radius:999px;
   font-weight:600;
   font-size:0.95rem;
-  border:1px solid rgba(16,24,40,0.03);
+  border:1px solid rgba(16,24,40,0.06);
 }
 
 /* small text */
@@ -68,13 +102,22 @@ body{
 /* fade-in animation */
 .fade-in{
   opacity:0;
-  transform:translateY(20px);
+  transform:translateY(24px);
   transition:opacity 0.6s ease-out, transform 0.6s ease-out;
   will-change:opacity, transform;
 }
 .fade-in.visible{
   opacity:1;
   transform:translateY(0);
+}
+
+/* visually hidden for accessibility */
+.visually-hidden{
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
 /* footer */
@@ -84,5 +127,7 @@ footer{margin-top:24px;text-align:center;padding:12px}
 @media (max-width:600px){
   .container{padding:16px;margin:20px auto}
   .hero{padding:28px}
-  .hero h1{font-size:1.6rem}
+  .hero-title{font-size:1.6rem}
+  .skills-banner{padding:28px}
+  .skills-banner-title{font-size:1.6rem}
 }

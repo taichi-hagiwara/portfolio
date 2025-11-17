@@ -1,4 +1,4 @@
-// IntersectionObserver でフェードインを制御します
+// IntersectionObserverで .fade-in 要素を監視し、ビューに入ったら .visible を付与してフェードインさせます.
 document.addEventListener('DOMContentLoaded', function () {
   const targets = document.querySelectorAll('.fade-in');
 
@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          // 一度フェードインしたら監視を止める
           observer.unobserve(entry.target);
         }
       });
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     targets.forEach(t => io.observe(t));
   } else {
+    // IntersectionObserver 非対応ブラウザ: 全部表示
     targets.forEach(t => t.classList.add('visible'));
   }
 });
